@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Shapes;
 // remember to reference and import your shape library
 
 namespace ShapesTest {
