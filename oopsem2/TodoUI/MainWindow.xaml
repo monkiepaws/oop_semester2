@@ -1,0 +1,50 @@
+﻿<Window x:Class="TodoUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Todos" Grid.Row="1" Grid.Column="1"></TextBlock>
+        <ListBox x:Name="ListTodo" Grid.Row="2" Grid.RowSpan="5" Grid.Column="1"></ListBox>
+
+        <TextBlock Text="Add Todo" Grid.Row="1" Grid.Column="3"></TextBlock>
+
+        <StackPanel Grid.Row="2" Grid.Column="3">
+            <TextBlock Text="Title:" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left"></TextBlock>
+            <TextBox x:Name="TbNewTitle" Text="Test" MinWidth="200" Grid.Row="2" Grid.Column="3"></TextBox>
+        </StackPanel>
+
+        <TextBlock Text="Description:" Grid.Row="3" Grid.Column="3"></TextBlock>
+        <TextBox x:Name="TbNewDescription" Text="Test" Grid.Row="4" Grid.Column="3"></TextBox>
+
+        <StackPanel Grid.Row="6" Grid.Column="3" VerticalAlignment="Bottom">
+            <TextBlock x:Name="TbMessages" Text="" Grid.Row="6" Grid.Column="1" Height="auto"></TextBlock>
+            <Button x:Name="BtnAddTodo" Content="Add Todo" Click="BtnAddTodo_Click"></Button>
+            <Button x:Name="BtnDeleteTodo" Content="Delete" Click="BtnDeleteTodo_Click"></Button>
+            <Button x:Name="btnUpdateTodo" Content="Update" Click="btnUpdateTodo_Click"></Button>
+        </StackPanel>
+
+    </Grid>
+
+</Window>
