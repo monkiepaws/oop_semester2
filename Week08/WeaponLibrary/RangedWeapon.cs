@@ -36,5 +36,10 @@ namespace WeaponLibrary
 
             return attack;
         }
+
+        public override string ToString()
+        {
+            return $"Ranged: {BaseDamage} base damage";
+        }
     }
 }

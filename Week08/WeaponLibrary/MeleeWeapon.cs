@@ -34,5 +34,10 @@ namespace WeaponLibrary
 
             return attack;
         }
+
+        public override string ToString()
+        {
+            return $"Melee: {BaseDamage} base damage";
+        }
     }
 }

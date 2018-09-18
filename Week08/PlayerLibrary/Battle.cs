@@ -7,11 +7,11 @@ using WeaponLibrary;
 
 namespace GameLibrary
 {
-    public class Fight
+    public class Battle
     {
         public Player Attacker { get; set; }
         public Player Defender { get; set; }
-        public Fight(Player attacker, Player defender)
+        public Battle(Player attacker, Player defender)
         {
             this.Attacker = attacker;
             this.Defender = defender;
