@@ -1,0 +1,56 @@
+﻿@page
+@model SimpleApi.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Index page</h1>
+
+    <h2>Simple web form</h2>
+
+    <label>Name:</label> <input id="simple-name" type="text" name="simple-name" value="Richard" />
+    <label>Email:</label><input id="simple-email" type="text" name="simple-email" value="9633324@student.swin.edu.au" />
+    <label>Message:</label><input id="simple-message" type="text" name="simple-message" value="Hello there Hello" />
+
+    <button id="simple-submit" type="submit">Submit</button>
+
+    <div id="success">
+        Nothing yet.
+    </div>
+
+    <hr />
+
+    <div id="static-files">
+        <h2>Static files</h2>
+        <img src="~/images/makoto.jpg" />
+    </div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script>
+        function postSimpleForm() {
+            let data = {
+                name: $('#simple-name').val(),
+                email: $('#simple-email').val(),
+                message: $('#simple-message').val()
+            };
+
+            $.ajax({
+                url: `http://localhost:5275/api/Contact`,
+                method: 'POST',
+                data: data,
+                success: result => {
+                    $('#success').html(`<h2>Success!!</h2><p>${result}</p>`);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            $('#simple-submit').click(postSimpleForm);
+        });
+    </script>
+</body>
