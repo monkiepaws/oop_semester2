@@ -42,9 +42,11 @@
             $.ajax({
                 url: `http://localhost:5275/api/Contact`,
                 method: 'POST',
-                data: data,
+                data: JSON.stringify(data),
+                contentType: "application/json",
                 success: result => {
-                    $('#success').html(`<h2>Success!!</h2><p>${result}</p>`);
+                    let response = result.value;
+                    $('#success').html(`<h2>Success!!</h2><p>${response.name}, ${response.email}, ${response.message}</p>`);
                 }
             });
         }

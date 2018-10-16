@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Serialization;
+using SimpleApi.Models;
 
 namespace SimpleApi.Controllers
 {
@@ -17,9 +19,9 @@ namespace SimpleApi.Controllers
             return Ok("YAHOOO! Sent back from Contact controller (get)");
         }
         [HttpPost]
-        public IActionResult Post(string name, string email, string message)
+        public IActionResult Post([FromBody] PostDataModel data)
         {
-            return Ok("Sent back from the Contact controller!! (post)");
+            return Ok(Json(data));
         }
     }
 }
