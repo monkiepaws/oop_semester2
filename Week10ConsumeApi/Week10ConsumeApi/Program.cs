@@ -14,7 +14,7 @@ namespace Week10ConsumeApi
 
             var api = new APIClient();
 
-            api.GetDude();
+            Console.WriteLine(api.GetDude(100));
 
             Console.WriteLine("End");
             Console.ReadLine();

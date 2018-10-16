@@ -13,14 +13,16 @@ namespace Week10ConsumeApi
     {
         Uri url = new Uri(@"https://c4demoapi.azurewebsites.net");
 
-        public void GetDude()
+        public Dude GetDude(int did)
         {
             Dude dude = new Dude();
             using (var client = new WebClient())
             {
-                var response = client.DownloadString(url + @"/api/values/1");
-                dude = JsonConvert.DeserializeObject(response);
+                var response = client.DownloadString(url + $"/api/values/{did}");
+                dude = JsonConvert.DeserializeObject<Dude>(response);
             }
+
+            return dude;
         }
     }
 }
