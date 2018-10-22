@@ -11,7 +11,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            List<Shape> shapes = new List<Shape>();
+            List<IShapeData> shapes = new List<IShapeData>();
 
             MainMenu mainMenu = new MainMenu();
             bool exit = false;
@@ -25,13 +25,14 @@ namespace ConsoleUI
                 if (option == 1)
                 {
                     ShapeMenu shapeMenu = new ShapeMenu();
-                    Shape newShape = shapeMenu.Create();
+                    IShapeData newShape = shapeMenu.Create();
                     shapes.Add(newShape);
                 }
                 else if (option == 2)
                 {
                     ViewShapeMenu view = new ViewShapeMenu();
                     view.DisplayShapes(shapes);
+                    view.ChooseShape(shapes);
                 }
                 else if (option == 0)
                 {
@@ -40,6 +41,7 @@ namespace ConsoleUI
             }
             while (exit == false);
 
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadLine();
         }
     }

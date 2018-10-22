@@ -27,5 +27,12 @@ namespace ShapeLibrary
             double perimeter = 2 * this.PI * this.Radius;
             return Math.Round(perimeter, 2);
         }
+
+        public override string ToString()
+        {
+            return $"*** Circle ***\n" +
+                   $"Colour:        {this.Colour}\n" +
+                   $"Radius:        {this.Radius}";
+        }
     }
 }

@@ -24,5 +24,12 @@ namespace ShapeLibrary
         {
             return this.Side1 + this.Side2 + this.Side3;
         }
+
+        public override string ToString()
+        {
+            return $"*** Equilateral Triangle ***\n" +
+                   $"Colour:        {this.Colour}\n" +
+                   $"Sides: {this.Side1} x {this.Side2} x {this.Side3}";
+        }
     }
 }

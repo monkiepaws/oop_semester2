@@ -28,5 +28,12 @@ namespace ShapeLibrary
             double perimeter = this.Side1 + this.Side2 + this.Side3;
             return Math.Round(perimeter, 2);
         }
+
+        public override string ToString()
+        {
+            return $"*** Right Angled Triangle ***\n" +
+                   $"Colour:        {this.Colour}\n" +
+                   $"Sides: {this.Side1} x {this.Side2} x {this.Side3}";
+        }
     }
 }
