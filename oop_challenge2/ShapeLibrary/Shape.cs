@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeLibrary
 {
-    public class Shape
+    public abstract class Shape
     {
         public string Colour { get; set; }
     }
