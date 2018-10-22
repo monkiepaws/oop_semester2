@@ -30,7 +30,7 @@ namespace ConsoleUI
                 string input = Console.ReadLine();
                 bool isInteger = int.TryParse(input, out selection);
 
-                if (isInteger == true && shapes.ElementAt(selection- 1) != null)
+                if (isInteger == true && selection > 0 && selection <= shapes.Count)
                 {
                     selection--;
                     IShapeData selectedShape = shapes[selection];
