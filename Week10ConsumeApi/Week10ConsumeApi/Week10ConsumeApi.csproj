@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="APIClient.cs" />
     <Compile Include="Models\Dude.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
