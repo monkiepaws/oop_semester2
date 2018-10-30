@@ -33,7 +33,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Button x:Name="Btn_Create" Grid.Column="0" Grid.Row="0" Content="Create" Click="Btn_Create_Click" />
-            <Button x:Name="Btn_Update" Grid.Column="2" Grid.Row="0" Content="Update" />
+            <Button x:Name="Btn_Update" Grid.Column="2" Grid.Row="0" Content="Update" Click="Btn_Update_Click" />
             <Button x:Name="Btn_Read" Grid.Column="0" Grid.Row="2" Content="Read" Click="Btn_Read_Click" />
             <Button x:Name="Btn_Delete" Grid.Column="2" Grid.Row="2" Content="Delete" Click="Btn_Delete_Click" />
         </Grid>

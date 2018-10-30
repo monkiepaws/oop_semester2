@@ -59,6 +59,26 @@ namespace APIClient
             }
         }
 
+        public async Task<TodoItem> PutAsync(TodoItem task)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var dataString = JsonConvert.SerializeObject(task,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore,
+                        Formatting = Formatting.None,
+                        ContractResolver = new CamelCasePropertyNamesContractResolver()
+                    });
+                var sendData = new StringContent(dataString, System.Text.Encoding.UTF8, "application/json");
+                var response = await client.PutAsync($"{this.Url}/{task.id}{this.ApiKey}", sendData);
+
+                var responseObject = JsonConvert.DeserializeObject<TodoItem>(await response.Content.ReadAsStringAsync());
+
+                return responseObject;
+            }
+        }
+
         public async Task<string> DeleteAsync(string id)
         {
             using (HttpClient client = new HttpClient())

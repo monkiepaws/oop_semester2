@@ -56,7 +56,7 @@ namespace Week12
             TodoItem task = new TodoItem(Tbox_TaskInput.Text);
             var response = await client.PostAsync(task);
 
-            Tb_Response.Text = $"Success!\n" +
+            Tb_Response.Text = $"Successfully created!\n" +
                                $"Todo ID: {response.id}\n" +
                                $"Description: {response.task}\n\n";
         }
@@ -67,6 +67,17 @@ namespace Week12
             var response = await client.DeleteAsync(id);
 
             Tb_Response.Text = response;
+        }
+
+        private async void Btn_Update_Click(object sender, RoutedEventArgs e)
+        {
+            Guid id = new Guid(Tbox_IdInput.Text);
+            TodoItem task = new TodoItem(Tbox_TaskInput.Text, id);
+            var response = await client.PutAsync(task);
+
+            Tb_Response.Text = $"Successfully updated!\n" +
+                               $"Todo ID: {response.id}\n" +
+                               $"Description: {response.task}\n\n";
         }
     }
 }
